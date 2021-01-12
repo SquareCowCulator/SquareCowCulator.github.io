@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>LD CowCulator</title>
+        <link rel = "stylesheet" href = ./style.css >
+        <link rel="shortcut icon" href=Point-A-to-Point-B-Period.png />
+    </head>
+
+    <header>
+        <div class = logo></div>
+    </header>
+
+    <body>
+        <div class = leftBlock>
+            <div id = truckBlock>
+                <h2 class = subTitle>Number of Trucks</h2>
+                <form>
+                    <select id = numOfTrucks>
+                        <option value = 1> 1 </option>
+                        <option value = 2> 2 </option>
+                    </select>
+                </form>
+            </div>
+
+            <div id = milesBlock>
+                <h2 class = subTitle>Number of Miles</h2>
+                <input type = "number" id ="numOfMiles" min ="200" max = "2500" value = 200>
+            </div>
+
+            <!--<div id = moversBlock> Might remove later if needed
+                <h2 class = subTitle>Number of Movers</h2>
+                <input type = "number" id ="numOfMovers" min ="1" max = "6" value = 2>
+            </div>-->
+
+            <div id = monthBlock>
+                <h2 class = subTitle>Month Moving</h2>
+                <form>
+                    <select id = monthMoving>
+                        <option value = .8> Jan </option>
+                        <option value = .8> Feb </option>
+                        <option value = .9> March </option>
+                        <option value = .9> April </option>
+                        <option value = 1> May </option>
+                        <option value = 1> June </option>
+                        <option value = 1> July </option>
+                        <option value = 1> Aug </option>
+                        <option value = .9> Sept </option>
+                        <option value = .8> Oct </option>
+                        <option value = .8> Nov </option>
+                        <option value = .8> Dec </option>
+                    </select>
+                </form>
+            </div>
+
+            <button id = calculateButton>CowCulate</button>
+
+        </div>
+
+        <div class = rightBlock>
+            <label id = results><h2>
+                                    Your estimate is between <br>
+                                   <p id = lowPrice> <br> </p>          
+                                    and                      <br>
+                                    <p id = highPrice> <br> </p>
+                                </h2>
+            </label>
+        </div>
+
+    </body>
+
+    <footer>
+        For issues or adjustments email: MichaelPaulson91@gmail.com
+    </footer>
+
+    <script src="script.js"></script>
+</html>
