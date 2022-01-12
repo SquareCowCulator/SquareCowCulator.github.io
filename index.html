@@ -1,75 +1,33 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
+        <meta charset="uft-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>LD CowCulator</title>
-        <link rel = "stylesheet" href = ./style.css >
-        <link rel="shortcut icon" href=Point-A-to-Point-B-Period.png />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     </head>
 
     <header>
-        <div class = logo></div>
+        <img style="max-width: 100%; height: auto; margin: auto; display: block; padding: 2%;" src=".\SCM-Logo.png" alt="">
     </header>
 
-    <body>
-        <div class = leftBlock>
-            <div id = truckBlock>
-                <h2 class = subTitle>Number of Trucks</h2>
-                <form>
-                    <select id = numOfTrucks>
-                        <option value = 1> 1 </option>
-                        <option value = 2> 2 </option>
-                    </select>
-                </form>
+    <body >
+        <form style="max-width:400px;margin:auto;" method="post" id="cowculator">
+
+            <input class="form-control" placeholder="Number of Miles" type="text" id="startingAd" name="startingAd" ><br>
+            <div style="text-align: center;";">
+                <input checked type="radio" id="trucknum1" name="trucknum" value = 1 >
+                <label for="trucknum1"> One Truck &nbsp &nbsp &nbsp</label>
+                <input type="radio" id="trucknum2" name="trucknum" value = 2 >
+                <label for="trucknum2"> Two Trucks </label><br><br>
             </div>
-
-            <div id = milesBlock>
-                <h2 class = subTitle>Number of Miles</h2>
-                <input type = "number" id ="numOfMiles" min ="200" max = "2500" value = 200>
-            </div>
-
-            <!--<div id = moversBlock> Might remove later if needed
-                <h2 class = subTitle>Number of Movers</h2>
-                <input type = "number" id ="numOfMovers" min ="1" max = "6" value = 2>
-            </div>-->
-
-            <div id = monthBlock>
-                <h2 class = subTitle>Month Moving</h2>
-                <form>
-                    <select id = monthMoving>
-                        <option value = .8> Jan </option>
-                        <option value = .8> Feb </option>
-                        <option value = .9> March </option>
-                        <option value = .9> April </option>
-                        <option value = 1> May </option>
-                        <option value = 1> June </option>
-                        <option value = 1> July </option>
-                        <option value = 1> Aug </option>
-                        <option value = .9> Sept </option>
-                        <option value = .8> Oct </option>
-                        <option value = .8> Nov </option>
-                        <option value = .8> Dec </option>
-                    </select>
-                </form>
-            </div>
-
-            <button id = calculateButton>CowCulate</button>
-
-        </div>
-
-        <div class = rightBlock>
-            <label id = results><h2>
-                                    Your estimate is between <br>
-                                   <p id = lowPrice> <br> </p>          
-                                    and                      <br>
-                                    <p id = highPrice> <br> </p>
-                                </h2>
-            </label>
-        </div>
+            <button style="width: auto; display: block; margin: auto;" type="button" class="btn btn-primary">Generate Estimate</button> 
+        </form>
 
     </body>
 
-    <footer>
+    <footer style="text-align: center; margin-top: 10%;">
         For issues or adjustments email: MichaelPaulson91@gmail.com
     </footer>
 
