@@ -14,16 +14,20 @@
 
     <body >
         <form style="max-width:400px;margin:auto;" method="post" id="cowculator">
-
-            <input class="form-control" placeholder="Number of Miles" type="text" id="startingAd" name="startingAd" ><br>
-            <div style="text-align: center;";">
+            <br>
+            <label for="miles" style="display: block; text-align: center;">Get Miles for this Move from Google Maps</label>
+            <input class="form-control" placeholder="Enter Miles Here" type="text" id="miles" name="miles" ><br>
+            <div style="text-align: center;";>
                 <input checked type="radio" id="trucknum1" name="trucknum" value = 1 >
                 <label for="trucknum1"> One Truck &nbsp &nbsp &nbsp</label>
                 <input type="radio" id="trucknum2" name="trucknum" value = 2 >
                 <label for="trucknum2"> Two Trucks </label><br><br>
             </div>
-            <button style="width: auto; display: block; margin: auto;" type="button" class="btn btn-primary">Generate Estimate</button> 
+            <button style="width: auto; display: block; margin: auto;" type="button" class="btn btn-primary" id="calculateButton"
+            onclick="">Generate Estimate</button> 
         </form>
+
+        <div id = "showEstimate" style="text-align: center; display: block; font-size:x-large; margin-top: 2%;"></div>
 
     </body>
 
@@ -31,5 +35,34 @@
         For issues or adjustments email: MichaelPaulson91@gmail.com
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+
+        let estimate = document.getElementById('calculateButton');
+        console.log(estimate)
+
+function movingCalculation()
+{
+    let numOfTrucks = parseInt((document.getElementById('trucknum1')).value);
+    let numOfMiles = parseInt((document.getElementById('miles')).value);
+    let price = 0;
+
+    console.log(numOfTrucks)
+
+    if (document.getElementById('trucknum1').checked)
+            price = Math.round(((1660 + (4.28*numOfMiles) + (.00082 * numOfMiles ** 2))/100)*100)
+    
+    else
+            price = Math.round(2014 + (8.66 * numOfMiles) + (.000415 * numOfMiles ** 2))
+    
+
+    console.log(price)
+
+    let low = Math.ceil((price*.9)/100)*100;
+    let high = Math.ceil((price * 1.1)/100)*100;
+
+    document.getElementById('showEstimate').innerHTML = "Your estimate is between " + low + " and " + high
+}
+
+estimate.onclick = movingCalculation;
+    </script>
 </html>
